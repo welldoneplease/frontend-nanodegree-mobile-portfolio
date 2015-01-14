@@ -52,7 +52,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    // make IMGES small
+    // make IMG small
     imagemin: {
       dynamic: {
         options: {
@@ -65,6 +65,19 @@ module.exports = function(grunt) {
           dest: 'views/images/'
         }]
       },
+    },
+    // make HTML small
+    htmlmin: {                                     // Task
+      dist: {                                      // Target
+        options: {                                 // Target options
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: {                                   // Dictionary of files
+          'dist/index.html': 'src/index.html',     // 'destination': 'source'
+          'dist/contact.html': 'src/contact.html'
+        }
+      }
     }
   });
 
@@ -89,6 +102,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
   // Register default tasks
   grunt.registerTask('default', ['psi-ngrok']);
