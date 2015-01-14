@@ -30,6 +30,13 @@ form {
 }
 
 .mover {
+  /*source: http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/*/
+  /*Animating Composite Properties*/
+  transform: translateZ(0);
+
+  /*wanted to do some translate3d instead of boring style.left*/
+  /*but was ulitmately too much hassle...*/
+  /*transform: translate3d(0,0,0);*/
   position: fixed;
   width: 256px;
   z-index: -1;
