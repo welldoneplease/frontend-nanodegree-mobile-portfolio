@@ -3,9 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content=" FILL ME IN ">
-    <meta name="author" content=" FILL ME IN ">
+    <meta name="description" content="Nanodegree">
+    <meta name="author" content="welldoneplease">
     <title>Cameron Pittman: Portfolio</title>
+
+    <style>
+      <!-- build:include css/styles.min.css --><!-- /build -->
+    </style>
 
     <script>
       (function(w,g){w['GoogleAnalyticsObject']=g;
@@ -15,13 +19,23 @@
       ga('create', 'UA-XXXX-Y');
       ga('send', 'pageview');
     </script>
-    <script async src="http://www.google-analytics.com/analytics.js"></script>
-    <script async src="js/perfmatters.min.js"></script>
+
+
+    <script>
+      <!-- build:include js/analytics.js --><!-- /build -->
+    </script>
+
+    <script>
+      <!-- build:include js/perfmatters.min.js --><!-- /build -->
+    </script>
+
   </head>
 
   <body>
     <header>
-      <a href="/"><img src="img/profilepic.png"></a>
+      <a href="/"><img src="data:image/png;base64,
+        <!-- build:include img/profilepic.b64 --><!-- /build -->
+      "></a>
       <p>Cameron Pittman<br><span>Course Developer</span></p>
     </header>
 
@@ -33,25 +47,34 @@
       <div class="content">
         <ul>
           <li>
-            <img src="https://lh4.ggpht.com/kJEnfqhPvtm4m3EneSZ4fWYGS8lW4YNhEjk6zPkyrQaBUHc-2Y_ElDic99NHI0h-UBLXVbRCjFybFvrWxdk=s100">
+            <!--<img src="https://lh4.ggpht.com/kJEnfqhPvtm4m3EneSZ4fWYGS8lW4YNhEjk6zPkyrQaBUHc-2Y_ElDic99NHI0h-UBLXVbRCjFybFvrWxdk=s100">-->
+            <img src="data:image/png;base64,
+              <!-- build:include img/2048_thumb.b64 --><!-- /build -->
+            ">
             <a href="project-2048.html">Build Your Own 2048!</a>
             <p>I made my own version of 2048. How cool is that!?</p>
           </li>
 
           <li>
-            <img src="https://lh6.ggpht.com/f_0W8h__3G99CWTjnMjD8BUKm7yp2-wJyApLtTwFoFtlal2ULf_JgHIsOQq2NiYfKOdMlXlMHDKNo5XVZLs=s100">
+            <img src="data:image/png;base64,
+              <!-- build:include img/webOp_thumb.b64 --><!-- /build -->
+            ">
             <a href="project-webperf.html">Website Performance Optimization</a>
             <p>Hey... this class looks familiar.</p>
           </li>
 
           <li>
-            <img src="https://lh5.ggpht.com/IKdCmTWn8a2nMhlwMYzryvzRN5CUZAOBr4tDrEAbszV7TIFe9pRAInA4kkYcgTXwrifJsBEsq1agTueuu-g=s100">
+            <img src="data:image/png;base64,
+              <!-- build:include img/moWebOp_thumb.b64 --><!-- /build -->
+            ">
             <a href="project-mobile.html">Mobile Web Development</a>
             <p>Making mobile apps isn't so hard after all.</p>
           </li>
 
           <li>
-            <img style="width: 100px;" src="views/images/pizzeria_small.png">
+            <img src="data:image/png;base64,
+              <!-- build:include views/images/pizzeria_thumb.b64 --><!-- /build -->
+            ">
             <a href="views/pizza.html">Cam's Pizzeria</a>
             <p>Who wants a performant pizza?</p>
           </li>
@@ -64,12 +87,9 @@
 
     <script>
       var cb = function() {
-        var l = document.createElement('link'); l.rel = 'stylesheet';
-        l.href = 'css/styles.min.css';
-        var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
         var f = document.createElement('link'); f.rel = 'stylesheet';
         f.href = '//fonts.googleapis.com/css?family=Open+Sans:400,700';
-        var s = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(f, s);
+        var s = document.getElementsByTagName('head')[0]; s.parentNode.insertBefore(f, s);
       };
       var raf = requestAnimationFrame || mozRequestAnimationFrame ||
           webkitRequestAnimationFrame || msRequestAnimationFrame;
