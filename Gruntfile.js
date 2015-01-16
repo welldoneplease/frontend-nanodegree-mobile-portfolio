@@ -74,8 +74,34 @@ module.exports = function(grunt) {
           collapseWhitespace: true
         },
         files: {                                   // Dictionary of files
-          'dist/index.html': 'src/index.html',     // 'destination': 'source'
-          'dist/contact.html': 'src/contact.html'
+          'dist/index.html': 'index.html',     // 'destination': 'source'
+        }
+      }
+    },
+    processhtml: {
+      options: {
+        recursive: true
+      },
+      dist: {
+        files: {
+          'dest/index.html': ['index.html']
+        }
+      }
+    },
+    base64: {
+      target: {
+        files: {
+          'img/2048.b64': 'img/2048.png',
+          'img/2048_thumb.b64': 'img/2048_thumb.jpg',
+          'img/cam_be_like.b64': 'img/cam_be_like.png',
+          'img/mobilewebdev.b64': 'img/mobilewebdev.png',
+          'img/moWebOp_thumb.b64': 'img/moWebOp_thumb.jpg',
+          'img/profilepic.b64': 'img/profilepic.png',
+          'img/webOp_thumb.b64': 'img/webOp_thumb.jpg',
+          'views/images/pizza.b64': 'views/images/pizza.png',
+          'views/images/pizzeria.b64': 'views/images/pizzeria.png',
+          'views/images/pizzeria_thumb.b64': 'views/images/pizzeria_thumb.png',
+          'views/images/rsz_pizza.b64': 'views/images/rsz_pizza.png'
         }
       }
     }
@@ -102,9 +128,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-base64');
 
   // Register default tasks
   grunt.registerTask('default', ['psi-ngrok']);
-  grunt.registerTask('pushprod', ['imagemin', 'cssmin', 'uglify']);
+  grunt.registerTask('build', ['cssmin', 'uglify', 'processhtml', 'htmlmin']);
 }
