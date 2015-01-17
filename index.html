@@ -1,33 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Nanodegree">
-    <meta name="author" content="welldoneplease">
-    <title>Cameron Pittman: Portfolio</title>
+      <!-- build:include partials/_headMeta.html --><!-- /build -->
 
     <style>
       <!-- build:include css/styles.min.css --><!-- /build -->
     </style>
-
-    <script>
-      (function(w,g){w['GoogleAnalyticsObject']=g;
-      w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
-
-      // TODO: replace with your Google Analytics profile ID.
-      ga('create', 'UA-XXXX-Y');
-      ga('send', 'pageview');
-    </script>
-
-
-    <script>
-      <!-- build:include js/analytics.js --><!-- /build -->
-    </script>
-
-    <script>
-      <!-- build:include js/perfmatters.min.js --><!-- /build -->
-    </script>
 
   </head>
 
@@ -75,26 +53,28 @@
             <img src="data:image/png;base64,
               <!-- build:include views/images/pizzeria_thumb.b64 --><!-- /build -->
             ">
-            <a href="views/pizza.html">Cam's Pizzeria</a>
+            <a href="pizza.html">Cam's Pizzeria</a>
             <p>Who wants a performant pizza?</p>
           </li>
         </ul>
     </div>
 
-    <footer>
-      <p>&copy; Web Performance 2014 <span id="crp-stats"></span></p>
-    </footer>
+      <!-- build:include partials/_footer.html --><!-- /build -->
 
     <script>
-      var cb = function() {
-        var f = document.createElement('link'); f.rel = 'stylesheet';
-        f.href = '//fonts.googleapis.com/css?family=Open+Sans:400,700';
-        var s = document.getElementsByTagName('head')[0]; s.parentNode.insertBefore(f, s);
-      };
-      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-          webkitRequestAnimationFrame || msRequestAnimationFrame;
-      if (raf) raf(cb);
-      else window.addEventListener('load', cb);
+      <!-- build:include js/analyticsInfo.min.js --><!-- /build -->
+    </script>
+
+    <script>
+      <!-- build:include js/analytics.js --><!-- /build -->
+    </script>
+
+    <script>
+      <!-- build:include js/perfmatters.min.js --><!-- /build -->
+    </script>
+
+    <script>
+      <!-- build:include js/fontLoader.min.js --><!-- /build -->
     </script>
 
   </body>
