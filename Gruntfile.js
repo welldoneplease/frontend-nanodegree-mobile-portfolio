@@ -39,6 +39,8 @@ module.exports = function(grunt) {
       my_target: {
         files: {
           'js/perfmatters.min.js': ['js/perfmatters.js'],
+          'js/fontLoader.min.js': ['js/fontLoader.js'],
+          'js/analyticsInfo.min.js': ['js/analyticsInfo.js'],
           'views/js/main.min.js' : ['views/js/main.js']
         }
       }
@@ -67,24 +69,33 @@ module.exports = function(grunt) {
       },
     },
     // make HTML small
-    htmlmin: {                                     // Task
-      dist: {                                      // Target
-        options: {                                 // Target options
+    htmlmin: {
+      dist: {
+        options: {
           removeComments: true,
           collapseWhitespace: true
         },
-        files: {                                   // Dictionary of files
-          'dist/index.html': 'index.html',     // 'destination': 'source'
+        files: {
+          'deploy/index.html': 'process/index.html',
+          'deploy/project-2048.html': 'process/project-2048.html',
+          'deploy/project-mobile.html': 'process/project-mobile.html',
+          'deploy/project-webperf.html': 'process/project-webperf.html',
+          'deploy/pizza.html': 'process/pizza.html'
         }
       }
     },
     processhtml: {
       options: {
-        recursive: true
+        recursive: true,
+        process: true
       },
       dist: {
         files: {
-          'dest/index.html': ['index.html']
+          'process/index.html': ['index.html'],
+          'process/project-2048.html': ['project-2048.html'],
+          'process/project-mobile.html': ['project-mobile.html'],
+          'process/project-webperf.html': ['project-webperf.html'],
+          'process/pizza.html': ['views/pizza.html']
         }
       }
     },
